@@ -5,7 +5,7 @@ O objetivo desse README é mostrar a inicialização do front e instalação de 
 ---
 ## Como inicializar
 
-Primeiramente usar o comando `npm install` para instalar quaisquer dependências que estarão no `package.json`
+Primeiramente usar o comando `npm install` no terminal para instalar quaisquer dependências que estarão no `package.json`
 
 ```
 npm install

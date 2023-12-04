@@ -6,11 +6,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="output.css">
+    <link rel="stylesheet" href="styles.css">
 
     <title>MVP PUC-Rio</title>
 </head>
 
-<body>
+<body class="text-white bg-[#121212]">
+    <nav class="flex bg-[#1f1f1f] h-[75px]">
+        <div class="ml-3 mt-1 cursor-pointer">
+            <img src="../img/logo.png" alt="Logo Filme database" class="w-16 h-16">
+        </div>
+        <input class="ml-5 md:ml-10 mt-3.5 p-3 h-11 w-[60%] md:w-[25%] rounded-md bg-[#0a0a0a]" placeholder="Procure pelo nome dos filmes..." />
+    </nav>
+
+    <div class="2xl:flex space-x-4 md:space-x-8 items-center mb-20 2xl:mb-0">
+        <img class="" src="../img/menu.png" alt="Menu FilmeDB">
+        <div class="space-y-4 2xl:space-y-10">
+            <h1 class="text-5xl font-bold mt-3 md:mt-0">Filme<span class="text-[#d88e4b] text-5xl font-bold mt-3 md:mt-0">DB</span></h1>
+            <p class="text-lg">O melhor banco de dados com informações de filmes e artistas!</p>
+        </div>
+    </div>
+
+    <div class="ml-4 md:ml-8 2xl:mt-5 flex items-center space-x-4">
+        <h1 class="text-3xl font-bold">Filmes:</h1>
+        <button id="openModal" class="inline-flex items-center p-2 justify-center rounded-sm text-md font-bold bg-[#d88e4b] hover:bg-[#d88e4b]/80">+ Adicionar filme</button>
+    </div>
+
+    <div id="modal" class="hidden fixed top-0 left-0 w-full h-full bg-[#1f1f1f] bg-opacity-80 backdrop-blur-md items-center justify-center">
+        <div class="bg-[#121212] m-[40%auto] sm:m-[15%auto] p-[40px] rounded-[10px] max-w-[800px] relative">
+            <span id="closeModal" class="text-[#d88e4b] hover:text-red-600 text-[30px] font-bold cursor-pointer absolute top-0 right-0 flex items-center justify-center mr-3">&times;</span>
+            <div class="grid grid-cols-1 space-y-4">
+                <input class="p-3 h-11 rounded-md bg-[#0a0a0a]" type="text" id="newInput" placeholder="Nome do filme" oninput="capitalizeFirstLetter(this)">
+                <input class="p-3 h-11 rounded-md bg-[#0a0a0a]" type="number" inputmode="numeric" id="newQuantity" placeholder="Ano de lançamento" oninput="checkMaxLength(this, 4)">
+                <input class="p-3 h-11 rounded-md bg-[#0a0a0a]" type="text" id="newPrice" placeholder="URL da imagem de capa">
+                <div class="flex flex-col">
+                    <textarea class="p-3 h-20 rounded-md bg-[#0a0a0a] resize-none" type="text" id="newPrice" placeholder="Resumo do filme(max: 1000 caracteres)" oninput="updateCharCount(this, 'charCount')"></textarea>
+                    <span id="charCount" class="text-sm text-gray-500 mt-1">0 / 1000 caracteres</span>
+                </div>
+                
+                <span onclick="newItem()" class="mt-4 inline-flex items-center p-2 justify-center rounded-sm text-md font-bold bg-[#d88e4b] hover:bg-[#d88e4b]/80">Adicionar</span>
+            </div>
+        </div>
+    </div>
+
    <script src="../src/scripts.js"></script>
 </body>
 
