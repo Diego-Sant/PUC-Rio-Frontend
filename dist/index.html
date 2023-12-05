@@ -27,7 +27,9 @@
         </div>
     </div>
 
-    <div class="ml-4 md:ml-8 2xl:mt-5 flex items-center space-x-4">
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+    <div class="ml-4 md:ml-8 lg:ml-5 2xl:mt-5 flex items-center space-x-4">
         <h1 class="text-3xl font-bold">Filmes:</h1>
         <button id="openModal" class="inline-flex items-center p-2 justify-center rounded-sm text-md font-bold bg-[#d88e4b] hover:bg-[#d88e4b]/80">+ Adicionar filme</button>
     </div>
@@ -52,6 +54,32 @@
 
     <div class="m-0 p-0 flex justify-center sm:justify-start">
         <div id="myList" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
+        </div>
+    </div>
+
+    <!---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------->
+
+    <div class="ml-4 md:ml-8 lg:ml-5 2xl:mt-5 flex items-center space-x-4">
+        <h1 class="text-3xl font-bold">Artistas:</h1>
+        <button id="openModalArtista" class="inline-flex items-center p-2 justify-center rounded-sm text-md font-bold bg-[#d88e4b] hover:bg-[#d88e4b]/80">+ Adicionar artista</button>
+    </div>
+
+    <div id="modalArtista" class="hidden fixed top-0 left-0 w-full h-full bg-[#1f1f1f] bg-opacity-80 backdrop-blur-md items-center justify-center">
+        <div id="toastArtista" class="toast"></div>
+        <div class="bg-[#121212] m-[40%auto] sm:m-[15%auto] p-[40px] rounded-[10px] max-w-[800px] relative">
+            <span id="closeModalArtista" class="text-[#d88e4b] hover:text-red-600 text-[30px] font-bold cursor-pointer absolute top-0 right-0 flex items-center justify-center mr-3">&times;</span>
+            <div class="grid grid-cols-1 space-y-4">
+                <input class="p-3 h-11 rounded-md bg-[#0a0a0a]" type="text" id="newNameArtista" placeholder="Nome do artista" oninput="capitalizeFirstLetter(this)">
+                <input class="p-3 h-11 rounded-md bg-[#0a0a0a]" type="number" inputmode="numeric" id="newAgeArtista" placeholder="Idade" oninput="checkMaxLength(this, 3)">
+                <input class="p-3 h-11 rounded-md bg-[#0a0a0a]" type="text" id="newImageUrlArtista" placeholder="URL da imagem do artista">
+                
+                <span onclick="newItemArtista()" class="mt-4 inline-flex items-center p-2 justify-center rounded-sm text-md font-bold bg-[#d88e4b] hover:bg-[#d88e4b]/80 cursor-pointer">Adicionar</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="m-0 p-0 flex justify-center sm:justify-start">
+        <div id="myListArtista" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4 2xl:grid-cols-6">
         </div>
     </div>
 
