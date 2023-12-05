@@ -11,7 +11,7 @@
     <title>MVP PUC-Rio</title>
 </head>
 
-<body class="text-white bg-[#121212]">
+<body class="text-white bg-[#121212] h-[200vh]">
     <nav class="flex bg-[#1f1f1f] h-[75px]">
         <div class="ml-3 mt-1 cursor-pointer">
             <img src="../img/logo.png" alt="Logo Filme database" class="w-16 h-16">
@@ -33,21 +33,28 @@
     </div>
 
     <div id="modal" class="hidden fixed top-0 left-0 w-full h-full bg-[#1f1f1f] bg-opacity-80 backdrop-blur-md items-center justify-center">
+        <div id="toast" class="toast"></div>
         <div class="bg-[#121212] m-[40%auto] sm:m-[15%auto] p-[40px] rounded-[10px] max-w-[800px] relative">
             <span id="closeModal" class="text-[#d88e4b] hover:text-red-600 text-[30px] font-bold cursor-pointer absolute top-0 right-0 flex items-center justify-center mr-3">&times;</span>
             <div class="grid grid-cols-1 space-y-4">
-                <input class="p-3 h-11 rounded-md bg-[#0a0a0a]" type="text" id="newInput" placeholder="Nome do filme" oninput="capitalizeFirstLetter(this)">
-                <input class="p-3 h-11 rounded-md bg-[#0a0a0a]" type="number" inputmode="numeric" id="newQuantity" placeholder="Ano de lançamento" oninput="checkMaxLength(this, 4)">
-                <input class="p-3 h-11 rounded-md bg-[#0a0a0a]" type="text" id="newPrice" placeholder="URL da imagem de capa">
+                <input class="p-3 h-11 rounded-md bg-[#0a0a0a]" type="text" id="newName" placeholder="Nome do filme" oninput="capitalizeFirstLetter(this)">
+                <input class="p-3 h-11 rounded-md bg-[#0a0a0a]" type="number" inputmode="numeric" id="newYear" placeholder="Ano de lançamento" oninput="checkMaxLength(this, 4)">
                 <div class="flex flex-col">
-                    <textarea class="p-3 h-20 rounded-md bg-[#0a0a0a] resize-none" type="text" id="newPrice" placeholder="Resumo do filme(max: 1000 caracteres)" oninput="updateCharCount(this, 'charCount')"></textarea>
-                    <span id="charCount" class="text-sm text-gray-500 mt-1">0 / 1000 caracteres</span>
+                    <textarea class="p-3 h-20 rounded-md bg-[#0a0a0a] resize-none" type="text" id="newResume" placeholder="Resumo do filme(max: 350 caracteres)" oninput="updateCharCount(this, 'charCount')"></textarea>
+                    <span id="charCount" class="text-sm text-gray-500 mt-1">0 / 350 caracteres</span>
                 </div>
+                <input class="p-3 h-11 rounded-md bg-[#0a0a0a]" type="text" id="newImageUrl" placeholder="URL da imagem de capa">
                 
-                <span onclick="newItem()" class="mt-4 inline-flex items-center p-2 justify-center rounded-sm text-md font-bold bg-[#d88e4b] hover:bg-[#d88e4b]/80">Adicionar</span>
+                <span onclick="newItem()" class="mt-4 inline-flex items-center p-2 justify-center rounded-sm text-md font-bold bg-[#d88e4b] hover:bg-[#d88e4b]/80 cursor-pointer">Adicionar</span>
             </div>
         </div>
     </div>
+
+    <div class="m-0 p-0 flex justify-center sm:justify-start">
+        <div id="myList" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6">
+        </div>
+    </div>
+
 
    <script src="../src/scripts.js"></script>
 </body>
