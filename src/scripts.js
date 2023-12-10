@@ -10,12 +10,11 @@ const getList = async () => {
       .then((response) => response.json())
       .then((data) => {
         data.filmes.forEach(item => insertList(item.nome, item.ano, item.resumo, item.imageUrl))
+        filmesLoaded = true;
       })
       .catch((error) => {
         console.error('Error:', error);
       });
-
-    filmesLoaded = true;
   }
 }
 
@@ -28,12 +27,11 @@ const getArtist = async () => {
       .then((response) => response.json())
       .then((data) => {
         data.artistas.forEach(item => insertListArtista(item.nome, item.idade, item.imageUrl))
+        artistasLoaded = true;
       })
       .catch((error) => {
         console.error('Error:', error);
       });
-
-    artistasLoaded = true;
   }
 }
 
@@ -281,7 +279,7 @@ const newItemArtista = async () => {
   } else {
     postItemArtista(inputName, inputAge, inputImageUrl);
     insertListArtista(inputName, inputAge, inputImageUrl);
-    alert("Filme adicionado!");
+    alert("Artista adicionado!");
   }
 }
 
